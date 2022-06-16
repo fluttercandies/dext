@@ -24,12 +24,10 @@ extension IterableDext<T> on Iterable<T> {
   ///
   /// The method is a async version of [forEach].
   Future<void> forEachAsync(
-    Future<void> Function(int index, T value) action,
+    Future<void> Function(T value) action,
   ) async {
-    var i = 0;
     for (final item in this) {
-      await action(i, item);
-      i++;
+      await action(item);
     }
   }
 
@@ -57,6 +55,23 @@ extension IterableDext<T> on Iterable<T> {
       }
       i++;
     }
+  }
+
+  /// Grouping the data.
+  ///
+  /// with the return value of the [keySelector] as the key
+  /// and the combination of the values of the element as the value.
+  ///
+  /// Such as:
+  ///
+  /// - [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].groupBy((i) => i % 2); // {0: [2, 4, 6, 8, 10], 1: [1, 3, 5, 7, 9]}
+  ///
+  Map<K, List<T>> groupBy<K>(K Function(T e) keySelector) {
+    return fold({}, (Map<K, List<T>> map, T e) {
+      final key = keySelector(e);
+      map.putIfAbsent(key, () => []).add(e);
+      return map;
+    });
   }
 }
 
