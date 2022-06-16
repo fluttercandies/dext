@@ -24,4 +24,46 @@ extension DateTimeDext on DateTime {
   DateTime toZeroHour() {
     return DateTime(year, month, day);
   }
+
+  /// Add time and return a new [DateTime].
+  DateTime addTime({
+    int day = 0,
+    int hour = 0,
+    int minute = 0,
+    int second = 0,
+    int millisecond = 0,
+    int microsecond = 0,
+  }) {
+    final duration = Duration(
+      days: day,
+      hours: hour,
+      minutes: minute,
+      seconds: second,
+      milliseconds: millisecond,
+      microseconds: microsecond,
+    );
+
+    return add(duration);
+  }
+
+  /// Subtract time and return a new [DateTime].
+  DateTime subtractTime({
+    int day = 0,
+    int hour = 0,
+    int minute = 0,
+    int second = 0,
+    int millisecond = 0,
+    int microsecond = 0,
+  }) {
+    final duration = Duration(
+      days: day,
+      hours: hour,
+      minutes: minute,
+      seconds: second,
+      milliseconds: millisecond,
+      microseconds: microsecond,
+    );
+
+    return subtract(duration);
+  }
 }
