@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the average method from the NumListExt extension, for the Dart programming language.">
-  <title>average method - NumListExt extension - dext library - Dart API</title>
+  <meta name="description" content="API docs for the forEachIndexedAsync method from the IterableDext extension, for the Dart programming language.">
+  <title>forEachIndexedAsync method - IterableDext extension - dext library - Dart API</title>
 
 
   
@@ -31,10 +31,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">dext</a></li>
     <li><a href="../../dext/dext-library.html">dext</a></li>
-    <li><a href="../../dext/NumListExt.html">NumListExt<span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span></a></li>
-    <li class="self-crumb">average method</li>
+    <li><a href="../../dext/IterableDext.html">IterableDext<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
+    <li class="self-crumb">forEachIndexedAsync method</li>
   </ol>
-  <div class="self-name">average</div>
+  <div class="self-name">forEachIndexedAsync</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,35 +45,41 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-method">average</span> method 
+<h1><span class="kind-method">forEachIndexedAsync</span> method 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>
-<span class="name ">average</span>(<wbr>)
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+<span class="name ">forEachIndexedAsync</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="forEachIndexedAsync-param-action"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> <span class="parameter-name">action</span>(<ol class="parameter-list"><li><span class="parameter" id="param-index"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span></li>
+<li><span class="parameter" id="param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span></span></li>
+</ol>
+)</span></li>
+</ol>)
 
       
 
     </section>
     
 <section class="desc markdown">
-  <p>Returns the average of all elements.</p>
+  <p>For each element, do something.</p>
+<p>The method is a async version of <a href="../../dext/IterableDext/forEachIndexed.html">forEachIndexed</a>.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">double average() {
-  double total = 0;
-  for (final n in this) {
-    total += n;
+  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; forEachIndexedAsync(
+  Future&lt;void&gt; Function(int index, T value) action,
+) async {
+  var i = 0;
+  for (final item in this) {
+    await action(i, item);
+    i++;
   }
-
-  return total &#47; length;
 }</code></pre>
 </section>
 
@@ -90,22 +96,24 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../../index.html">dext</a></li>
   <li><a href="../../dext/dext-library.html">dext</a></li>
-  <li><a href="../../dext/NumListExt.html">NumListExt<span class="signature">&lt;<wbr><span class="type-parameter">T extends num</span>&gt;</span></a></li>
-  <li class="self-crumb">average method</li>
+  <li><a href="../../dext/IterableDext.html">IterableDext<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
+  <li class="self-crumb">forEachIndexedAsync method</li>
 </ol>
 
 
-    <h5>NumListExt extension</h5>
+    <h5>IterableDext extension</h5>
     <ol>
 
 
 
 
 
-    <li class="section-title"><a href="../../dext/NumListExt.html#instance-methods">Methods</a></li>
-    <li><a href="../../dext/NumListExt/average.html">average</a></li>
-    <li><a href="../../dext/NumListExt/intSum.html">intSum</a></li>
-    <li><a href="../../dext/NumListExt/sum.html">sum</a></li>
+    <li class="section-title"><a href="../../dext/IterableDext.html#instance-methods">Methods</a></li>
+    <li><a href="../../dext/IterableDext/forEachAsync.html">forEachAsync</a></li>
+    <li><a href="../../dext/IterableDext/forEachIndexed.html">forEachIndexed</a></li>
+    <li><a href="../../dext/IterableDext/forEachIndexedAsync.html">forEachIndexedAsync</a></li>
+    <li><a href="../../dext/IterableDext/mapIndexed.html">mapIndexed</a></li>
+    <li><a href="../../dext/IterableDext/whereIndexed.html">whereIndexed</a></li>
 
 
 
