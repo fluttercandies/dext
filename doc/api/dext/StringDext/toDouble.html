@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the toDouble method from the StringDext extension, for the Dart programming language.">
+  <title>toDouble method - StringDext extension - dext library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../"
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">dext</a></li>
+    <li><a href="../../dext/dext-library.html">dext</a></li>
+    <li><a href="../../dext/StringDext.html">StringDext</a></li>
+    <li class="self-crumb">toDouble method</li>
+  </ol>
+  <div class="self-name">toDouble</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">toDouble</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span>
+<span class="name ">toDouble</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="toDouble-param-decimalDigits">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">decimalDigits</span>, </span></li>
+<li><span class="parameter" id="toDouble-param-roundType"><span class="type-annotation"><a href="../../dext/NumberRoundType.html">NumberRoundType</a></span> <span class="parameter-name">roundType</span> = <span class="default-value">NumberRoundType.round</span>}</span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Converts string to a double.</p>
+<p>The <code>decimalDigits</code> and <code>roundType</code> is used to round the double.</p>
+<p>The <code>decimalDigits</code> default is null, which means no decimal digits.
+The <code>roundType</code> default is NumberRoundType.round.</p>
+<p>Such as:</p>
+<ul>
+<li>
+<p>default</p>
+<ul>
+<li>'123.45'.toDouble() =&gt; 123.45</li>
+</ul>
+</li>
+<li>
+<p>just use decimalDigits</p>
+<ul>
+<li>'123.456'.toDouble(decimalDigits: 0) =&gt; 123.0</li>
+<li>'123.456'.toDouble(decimalDigits: 1) =&gt; 123.5</li>
+<li>'123.456'.toDouble(decimalDigits: 2) =&gt; 123.46</li>
+</ul>
+</li>
+<li>
+<p>use decimalDigits and <a href="../../dext/NumberRoundType.html">NumberRoundType.round</a></p>
+<ul>
+<li>'123.456'.toDouble(decimalDigits: 0, roundType: NumberRoundType.round) =&gt; 123.0</li>
+<li>'123.456'.toDouble(decimalDigits: 1, roundType: NumberRoundType.round) =&gt; 123.5</li>
+<li>'123.456'.toDouble(decimalDigits: 2, roundType: NumberRoundType.round) =&gt; 123.46</li>
+</ul>
+</li>
+<li>
+<p>use decimalDigits and <a href="../../dext/NumberRoundType.html">NumberRoundType.floor</a></p>
+<ul>
+<li>'123.456'.toDouble(decimalDigits: 0, roundType: NumberRoundType.floor) =&gt; 123.0</li>
+<li>'123.456'.toDouble(decimalDigits: 1, roundType: NumberRoundType.floor) =&gt; 123.4</li>
+<li>'123.456'.toDouble(decimalDigits: 2, roundType: NumberRoundType.floor) =&gt; 123.46</li>
+</ul>
+</li>
+<li>
+<p>use decimalDigits and <a href="../../dext/NumberRoundType.html">NumberRoundType.ceil</a></p>
+<ul>
+<li>'123.456'.toDouble(decimalDigits: 0, roundType: NumberRoundType.ceil) =&gt; 123.0</li>
+<li>'123.456'.toDouble(decimalDigits: 1, roundType: NumberRoundType.ceil) =&gt; 123.5</li>
+<li>'123.456'.toDouble(decimalDigits: 2, roundType: NumberRoundType.ceil) =&gt; 123.46</li>
+</ul>
+</li>
+</ul>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">double toDouble({
+  int? decimalDigits,
+  NumberRoundType roundType = NumberRoundType.round,
+}) {
+  if (decimalDigits == null) {
+    return double.parse(this);
+  }
+  final x = double.parse(this);
+  final y = x * pow(10, decimalDigits);
+  switch (roundType) {
+    case NumberRoundType.round:
+      return y.round() &#47; pow(10, decimalDigits);
+    case NumberRoundType.floor:
+      return y.floor() &#47; pow(10, decimalDigits);
+    case NumberRoundType.ceil:
+      return y.ceil() &#47; pow(10, decimalDigits);
+    default:
+      throw Exception(&#39;Unknown round type: $roundType&#39;);
+  }
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">dext</a></li>
+  <li><a href="../../dext/dext-library.html">dext</a></li>
+  <li><a href="../../dext/StringDext.html">StringDext</a></li>
+  <li class="self-crumb">toDouble method</li>
+</ol>
+
+
+    <h5>StringDext extension</h5>
+    <ol>
+
+
+
+
+
+    <li class="section-title"><a href="../../dext/StringDext.html#instance-methods">Methods</a></li>
+    <li><a href="../../dext/StringDext/roundToInt.html">roundToInt</a></li>
+    <li><a href="../../dext/StringDext/toDouble.html">toDouble</a></li>
+    <li><a href="../../dext/StringDext/toInt.html">toInt</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    dext
+      1.0.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+
