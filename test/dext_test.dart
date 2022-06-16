@@ -34,33 +34,39 @@ void main() {
         expect('123.456'.toDouble(decimalDigits: 3), 123.456);
       });
 
-      test('roundType', () {
-        void expectDecimal(
-          int decimalDigits,
-          NumberRoundType roundType,
-          String srcValue,
-          num checkValue,
-        ) {
-          expect(
-            srcValue.toDouble(
-              decimalDigits: decimalDigits,
-              roundType: roundType,
-            ),
-            checkValue,
-          );
-        }
+      void expectDecimal(
+        int decimalDigits,
+        NumberRoundType roundType,
+        String srcValue,
+        num checkValue,
+      ) {
+        expect(
+          srcValue.toDouble(
+            decimalDigits: decimalDigits,
+            roundType: roundType,
+          ),
+          checkValue,
+        );
+      }
 
-        expectDecimal(1, NumberRoundType.round, '123.45', 123.5);
+      group('roundType', () {
+        test('Decimal:1', () {
+          expectDecimal(1, NumberRoundType.round, '123.45', 123.5);
+          expectDecimal(1, NumberRoundType.floor, '123.45', 123.4);
+          expectDecimal(1, NumberRoundType.ceil, '123.45', 123.5);
+        });
 
-        expectDecimal(1, NumberRoundType.floor, '123.45', 123.4);
+        test('Decimal:2', () {
+          expectDecimal(2, NumberRoundType.round, '123.456', 123.46);
+          expectDecimal(2, NumberRoundType.floor, '123.456', 123.45);
+          expectDecimal(2, NumberRoundType.ceil, '123.456', 123.46);
+        });
 
-        expectDecimal(1, NumberRoundType.ceil, '123.45', 123.5);
-
-        expectDecimal(2, NumberRoundType.round, '123.456', 123.46);
-
-        expectDecimal(2, NumberRoundType.floor, '123.456', 123.45);
-
-        expectDecimal(2, NumberRoundType.ceil, '123.456', 123.46);
+        test('Decimal:2, negative', () {
+          expectDecimal(2, NumberRoundType.round, '-123.4567', -123.46);
+          expectDecimal(2, NumberRoundType.floor, '-123.4567', -123.46);
+          expectDecimal(2, NumberRoundType.ceil, '-123.4567', -123.45);
+        });
       });
     });
   });

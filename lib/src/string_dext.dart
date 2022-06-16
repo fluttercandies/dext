@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:dext/dext.dart';
 
+/// Extension for String
 extension StringDext on String {
   /// Converts string to an integer.
   ///
