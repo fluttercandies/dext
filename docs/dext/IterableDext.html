@@ -70,7 +70,7 @@
         <h2>Methods</h2>
         <dl class="callables">
             <dt id="forEachAsync" class="callable">
-  <span class="name"><a href="../dext/IterableDext/forEachAsync.html">forEachAsync</a></span><span class="signature">(<wbr><span class="parameter" id="forEachAsync-param-action"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> <span class="parameter-name">action</span>(<span class="parameter" id="param-index"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span><span class="parameter" id="param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span></span>)</span>)
+  <span class="name"><a href="../dext/IterableDext/forEachAsync.html">forEachAsync</a></span><span class="signature">(<wbr><span class="parameter" id="forEachAsync-param-action"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> <span class="parameter-name">action</span>(<span class="parameter" id="param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span></span>)</span>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
@@ -104,6 +104,19 @@
 </dt>
 <dd>
   For each element, do something. <a href="../dext/IterableDext/forEachIndexedAsync.html">[...]</a>
+  
+
+</dd>
+
+            <dt id="groupBy" class="callable">
+  <span class="name"><a href="../dext/IterableDext/groupBy.html">groupBy</a></span><span class="signature">&lt;<wbr><span class="type-parameter">K</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="groupBy-param-keySelector"><span class="type-annotation">K</span> <span class="parameter-name">keySelector</span>(<span class="parameter" id="param-e"><span class="type-annotation">T</span> <span class="parameter-name">e</span></span>)</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Grouping the data. <a href="../dext/IterableDext/groupBy.html">[...]</a>
   
 
 </dd>
@@ -192,6 +205,7 @@
     <li><a href="../dext/IterableDext/forEachAsync.html">forEachAsync</a></li>
     <li><a href="../dext/IterableDext/forEachIndexed.html">forEachIndexed</a></li>
     <li><a href="../dext/IterableDext/forEachIndexedAsync.html">forEachIndexedAsync</a></li>
+    <li><a href="../dext/IterableDext/groupBy.html">groupBy</a></li>
     <li><a href="../dext/IterableDext/mapIndexed.html">mapIndexed</a></li>
     <li><a href="../dext/IterableDext/whereIndexed.html">whereIndexed</a></li>
 

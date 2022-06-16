@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the forEachAsync method from the IterableDext extension, for the Dart programming language.">
-  <title>forEachAsync method - IterableDext extension - dext library - Dart API</title>
+  <meta name="description" content="API docs for the groupBy method from the IterableDext extension, for the Dart programming language.">
+  <title>groupBy method - IterableDext extension - dext library - Dart API</title>
 
 
   
@@ -32,9 +32,9 @@
     <li><a href="../../index.html">dext</a></li>
     <li><a href="../../dext/dext-library.html">dext</a></li>
     <li><a href="../../dext/IterableDext.html">IterableDext<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
-    <li class="self-crumb">forEachAsync method</li>
+    <li class="self-crumb">groupBy&lt;<wbr><span class="type-parameter">K</span>&gt; method</li>
   </ol>
-  <div class="self-name">forEachAsync</div>
+  <div class="self-name">groupBy</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,15 +45,15 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-method">forEachAsync</span> method 
+<h1><span class="kind-method">groupBy&lt;<wbr><span class="type-parameter">K</span>&gt;</span> method 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-<span class="name ">forEachAsync</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="forEachAsync-param-action"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> <span class="parameter-name">action</span>(<ol class="parameter-list"><li><span class="parameter" id="param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span></span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>&gt;</span></span>
+<span class="name ">groupBy</span>&lt;<wbr><span class="type-parameter">K</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="groupBy-param-keySelector"><span class="type-annotation">K</span> <span class="parameter-name">keySelector</span>(<ol class="parameter-list"><li><span class="parameter" id="param-e"><span class="type-annotation">T</span> <span class="parameter-name">e</span></span></li>
 </ol>
 )</span></li>
 </ol>)
@@ -63,20 +63,25 @@
     </section>
     
 <section class="desc markdown">
-  <p>For each element, do something.</p>
-<p>The method is a async version of <a href="https://api.flutter.dev/flutter/dart-core/Iterable/forEach.html">forEach</a>.</p>
+  <p>Grouping the data.</p>
+<p>with the return value of the <code>keySelector</code> as the key
+and the combination of the values of the element as the value.</p>
+<p>Such as:</p>
+<ul>
+<li><code>1, 2, 3, 4, 5, 6, 7, 8, 9, 10</code>.groupBy((i) =&gt; i % 2); // {0: <code>2, 4, 6, 8, 10</code>, 1: <code>1, 3, 5, 7, 9</code>}</li>
+</ul>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; forEachAsync(
-  Future&lt;void&gt; Function(T value) action,
-) async {
-  for (final item in this) {
-    await action(item);
-  }
+  <pre class="language-dart"><code class="language-dart">Map&lt;K, List&lt;T&gt;&gt; groupBy&lt;K&gt;(K Function(T e) keySelector) {
+  return fold({}, (Map&lt;K, List&lt;T&gt;&gt; map, T e) {
+    final key = keySelector(e);
+    map.putIfAbsent(key, () =&gt; []).add(e);
+    return map;
+  });
 }</code></pre>
 </section>
 
@@ -94,7 +99,7 @@
   <li><a href="../../index.html">dext</a></li>
   <li><a href="../../dext/dext-library.html">dext</a></li>
   <li><a href="../../dext/IterableDext.html">IterableDext<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
-  <li class="self-crumb">forEachAsync method</li>
+  <li class="self-crumb">groupBy&lt;<wbr><span class="type-parameter">K</span>&gt; method</li>
 </ol>
 
 
