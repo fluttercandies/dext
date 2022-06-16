@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the addTime method from the DateTimeDext extension, for the Dart programming language.">
+  <title>addTime method - DateTimeDext extension - dext library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../../static-assets/styles.css?v1">
+  <link rel="icon" href="../../static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="../../"
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../../index.html">dext</a></li>
+    <li><a href="../../dext/dext-library.html">dext</a></li>
+    <li><a href="../../dext/DateTimeDext.html">DateTimeDext</a></li>
+    <li class="self-crumb">addTime method</li>
+  </ol>
+  <div class="self-name">addTime</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-method">addTime</span> method 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+</h1></div>
+
+    <section class="multi-line-signature">
+      
+
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a></span>
+<span class="name ">addTime</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="addTime-param-day">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">day</span> = <span class="default-value">0</span>, </span></li>
+<li><span class="parameter" id="addTime-param-hour"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">hour</span> = <span class="default-value">0</span>, </span></li>
+<li><span class="parameter" id="addTime-param-minute"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">minute</span> = <span class="default-value">0</span>, </span></li>
+<li><span class="parameter" id="addTime-param-second"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">second</span> = <span class="default-value">0</span>, </span></li>
+<li><span class="parameter" id="addTime-param-millisecond"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">millisecond</span> = <span class="default-value">0</span>, </span></li>
+<li><span class="parameter" id="addTime-param-microsecond"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">microsecond</span> = <span class="default-value">0</span>}</span></li>
+</ol>)
+
+      
+
+    </section>
+    
+<section class="desc markdown">
+  <p>Add time and return a new <a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>.</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">DateTime addTime({
+  int day = 0,
+  int hour = 0,
+  int minute = 0,
+  int second = 0,
+  int millisecond = 0,
+  int microsecond = 0,
+}) {
+  final duration = Duration(
+    days: day,
+    hours: hour,
+    minutes: minute,
+    seconds: second,
+    milliseconds: millisecond,
+    microseconds: microsecond,
+  );
+
+  return add(duration);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="../../index.html">dext</a></li>
+  <li><a href="../../dext/dext-library.html">dext</a></li>
+  <li><a href="../../dext/DateTimeDext.html">DateTimeDext</a></li>
+  <li class="self-crumb">addTime method</li>
+</ol>
+
+
+    <h5>DateTimeDext extension</h5>
+    <ol>
+
+
+
+
+
+    <li class="section-title"><a href="../../dext/DateTimeDext.html#instance-methods">Methods</a></li>
+    <li><a href="../../dext/DateTimeDext/addTime.html">addTime</a></li>
+    <li><a href="../../dext/DateTimeDext/simpleDate.html">simpleDate</a></li>
+    <li><a href="../../dext/DateTimeDext/simpleDateTime.html">simpleDateTime</a></li>
+    <li><a href="../../dext/DateTimeDext/simpleTime.html">simpleTime</a></li>
+    <li><a href="../../dext/DateTimeDext/subtractTime.html">subtractTime</a></li>
+    <li><a href="../../dext/DateTimeDext/toZeroHour.html">toZeroHour</a></li>
+
+
+
+
+</ol>
+
+  </div><!--/.sidebar-offcanvas-->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+
+</main>
+
+<footer>
+  <span class="no-break">
+    dext
+      1.0.0
+  </span>
+
+  
+</footer>
+
+
+
+<script src="../../static-assets/highlight.pack.js?v1"></script>
+<script src="../../static-assets/script.js?v1"></script>
+
+
+
+</body>
+
+</html>
+
