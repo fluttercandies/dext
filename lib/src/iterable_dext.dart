@@ -75,7 +75,7 @@ extension IterableDext<T> on Iterable<T> {
   }
 }
 
-/// String extensions.
+/// Extensions for nullable `Iterable<T?>`.
 extension IterableDext2<T> on Iterable<T?> {
   Iterable<T> whereNotNull() sync* {
     for (final item in this) {
