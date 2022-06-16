@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 /// Extensions for [DateTime]
 extension DateTimeDext on DateTime {
   /// Converts [DateTime] to yyyy-MM-dd format.
@@ -19,6 +21,13 @@ extension DateTimeDext on DateTime {
   /// Converts [DateTime] to yyyy-MM-dd HH:mm:ss.
   String simpleDateTime() {
     return '${simpleDate()} ${simpleTime()}';
+  }
+
+  /// Converts [DateTime] to [format] format.
+  ///
+  /// Just wrap [DateFormat] with this method.
+  String format(String formatText) {
+    return DateFormat(formatText).format(this);
   }
 
   /// Converts [DateTime] to the zero time of the day.

@@ -74,5 +74,20 @@ void main() {
         DateTime(2022, 1, 1, 12, 22, 33, 444, 554),
       );
     });
+
+    test('formatDate', () {
+      expect(
+        dateTime.format('yyyy-MM-dd'),
+        '2022-01-01',
+      );
+      expect(
+        dateTime.format('yyyy-MM-dd HH:mm:ss'),
+        '2022-01-01 12:22:33',
+      );
+      expect(
+        dateTime.format('yyyy-MM-dd HH:mm:ss.SSS'),
+        '2022-01-01 12:22:33.444',
+      );
+    });
   });
 }
