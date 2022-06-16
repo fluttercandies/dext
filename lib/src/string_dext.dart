@@ -103,4 +103,11 @@ extension StringDext on String {
         throw Exception('Unknown round type: $roundType');
     }
   }
+
+  /// Converts string to [DateTime].
+  ///
+  /// Just wrap the [DateTime.parse] method.
+  DateTime toDateTime() {
+    return DateTime.parse(this);
+  }
 }
