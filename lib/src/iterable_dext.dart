@@ -89,6 +89,12 @@ extension IterableDext2<T> on Iterable<T?> {
 /// `List<num>` extensions.
 extension NumListExt<T extends num> on Iterable<T> {
   /// Returns the sum of all elements.
+  ///
+  /// The result is double.
+  ///
+  /// Such as:
+  /// - [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].sum(); // 55.0
+  /// - [1.1, 2.2, 3.3].sum(); // 6.6
   double sum() {
     double total = 0;
     for (final n in this) {
@@ -99,6 +105,15 @@ extension NumListExt<T extends num> on Iterable<T> {
   }
 
   /// Returns the sum int result of all elements.
+  ///
+  /// The result is int.
+  ///
+  /// [roundType] to see [NumberRoundType].
+  ///
+  /// This method is equivalent to `sum().roundToInt(roundType:roundType)`
+  ///
+  /// Such as:
+  /// - [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].sumInt(); // 55
   int intSum({
     NumberRoundType roundType = NumberRoundType.round,
   }) {
@@ -111,6 +126,12 @@ extension NumListExt<T extends num> on Iterable<T> {
   }
 
   /// Returns the average of all elements.
+  ///
+  /// The result is double.
+  ///
+  /// Such as:
+  /// - [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].average(); // 5.5
+  /// - [1.1, 2.2, 3.3].average(); // 2.2
   double average() {
     double total = 0;
     for (final n in this) {
