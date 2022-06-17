@@ -1,7 +1,7 @@
 name: dext
 description: A Dart extension library, use to extend dart language.
 version: 0.1.0
-# homepage: https://www.example.com
+homepage: https://github.com/fluttercandies/dext
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
