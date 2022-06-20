@@ -53,28 +53,40 @@
       
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a></span>
-<span class="name ">toDateTime</span>(<wbr>)
+<span class="name ">toDateTime</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="toDateTime-param-timestampUnit">{<span class="type-annotation"><a href="../../dext/TimestampUnit.html">TimestampUnit</a></span> <span class="parameter-name">timestampUnit</span> = <span class="default-value">TimestampUnit.milliseconds</span>}</span></li>
+</ol>)
 
       
 
     </section>
     
 <section class="desc markdown">
-  <p>Converts int unit timestamp to <a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>.</p>
+  <p>Converts int unix timestamp to <a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>.</p>
+<p>Unix timestamps in other languages are sometimes seconds, such as C.
+So, we can use <code>timestampUnit</code> to specify the unit of the timestamp.</p>
+<p>Such as:</p>
+<ul>
+<li><code>1234567890.toDateTime(timestampUnit: TimestampUnit.seconds)</code> =&gt; <code>DateTime(2009, 2, 14, 7, 31, 30)</code></li>
+<li><code>1234567890123.toDateTime()</code> =&gt; <code>DateTime(2009, 2, 14, 7, 31, 30, 0, 123)</code></li>
+</ul>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">DateTime toDateTime() {
-  final length = toString().length;
+  <pre class="language-dart"><code class="language-dart">DateTime toDateTime({
+  TimestampUnit timestampUnit = TimestampUnit.milliseconds,
+}) {
   var v = this;
 
-  if (length == 10) {
+  if (timestampUnit == TimestampUnit.seconds) {
+    v = v * 1000 * 1000;
+  } else if (timestampUnit == TimestampUnit.milliseconds) {
     v = v * 1000;
   }
-  return DateTime.fromMillisecondsSinceEpoch(this);
+
+  return DateTime.fromMicrosecondsSinceEpoch(v);
 }</code></pre>
 </section>
 
@@ -121,7 +133,7 @@
 <footer>
   <span class="no-break">
     dext
-      1.0.0
+      0.1.0
   </span>
 
   

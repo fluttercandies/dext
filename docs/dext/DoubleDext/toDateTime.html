@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the whereIndexed method from the IterableDext extension, for the Dart programming language.">
-  <title>whereIndexed method - IterableDext extension - dext library - Dart API</title>
+  <meta name="description" content="API docs for the toDateTime method from the DoubleDext extension, for the Dart programming language.">
+  <title>toDateTime method - DoubleDext extension - dext library - Dart API</title>
 
 
   
@@ -31,10 +31,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">dext</a></li>
     <li><a href="../../dext/dext-library.html">dext</a></li>
-    <li><a href="../../dext/IterableDext.html">IterableDext<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
-    <li class="self-crumb">whereIndexed method</li>
+    <li><a href="../../dext/DoubleDext.html">DoubleDext</a></li>
+    <li class="self-crumb">toDateTime method</li>
   </ol>
-  <div class="self-name">whereIndexed</div>
+  <div class="self-name">toDateTime</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,18 +45,16 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-method">whereIndexed</span> method 
+<h1><span class="kind-method">toDateTime</span> method 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span>
-<span class="name ">whereIndexed</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="whereIndexed-param-predicate"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">predicate</span>(<ol class="parameter-list"><li><span class="parameter" id="param-index"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span></li>
-<li><span class="parameter" id="param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span></span></li>
-</ol>
-)</span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a></span>
+<span class="name ">toDateTime</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="toDateTime-param-timestampUnit">{<span class="type-annotation"><a href="../../dext/TimestampUnit.html">TimestampUnit</a></span> <span class="parameter-name">timestampUnit</span> = <span class="default-value">TimestampUnit.milliseconds</span>, </span></li>
+<li><span class="parameter" id="toDateTime-param-roundType"><span class="type-annotation"><a href="../../dext/NumberRoundType.html">NumberRoundType</a></span> <span class="parameter-name">roundType</span> = <span class="default-value">NumberRoundType.round</span>}</span></li>
 </ol>)
 
       
@@ -64,22 +62,36 @@
     </section>
     
 <section class="desc markdown">
-  <p>Filtering elements.</p>
-<p>The method is a have index version of <a href="https://api.flutter.dev/flutter/dart-core/Iterable/where.html">where</a>.</p>
+  <p>Converts double to <code>DateTime</code></p>
+<p>In some languages, the timestamp takes the integer part as
+the second and the decimal part as the millisecond or other.
+This method should be used.</p>
+<p>Such as:</p>
+<ul>
+<li><code>1234567890.123456.toDateTime(timestampUnit: TimestampUnit.seconds)</code> =&gt; <code>DateTime(2009, 2, 14, 7, 31, 30, 123, 456)</code></li>
+<li><code>1234567890123.456.toDateTime()</code> =&gt; <code>DateTime(2009, 2, 14, 7, 31, 30, 123, 456)</code></li>
+</ul>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Iterable&lt;T&gt; whereIndexed(bool Function(int index, T value) predicate) sync* {
-  var i = 0;
-  for (final item in this) {
-    if (predicate(i, item)) {
-      yield item;
-    }
-    i++;
+  <pre class="language-dart"><code class="language-dart">DateTime toDateTime({
+  TimestampUnit timestampUnit = TimestampUnit.milliseconds,
+  NumberRoundType roundType = NumberRoundType.round,
+}) {
+  var v = this;
+
+  if (timestampUnit == TimestampUnit.seconds) {
+    v = v * 1000 * 1000;
+  } else if (timestampUnit == TimestampUnit.milliseconds) {
+    v = v * 1000;
   }
+
+  final time = v.roundToInt(roundType: roundType);
+
+  return DateTime.fromMicrosecondsSinceEpoch(time);
 }</code></pre>
 </section>
 
@@ -96,25 +108,20 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../../index.html">dext</a></li>
   <li><a href="../../dext/dext-library.html">dext</a></li>
-  <li><a href="../../dext/IterableDext.html">IterableDext<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
-  <li class="self-crumb">whereIndexed method</li>
+  <li><a href="../../dext/DoubleDext.html">DoubleDext</a></li>
+  <li class="self-crumb">toDateTime method</li>
 </ol>
 
 
-    <h5>IterableDext extension</h5>
+    <h5>DoubleDext extension</h5>
     <ol>
 
 
 
 
 
-    <li class="section-title"><a href="../../dext/IterableDext.html#instance-methods">Methods</a></li>
-    <li><a href="../../dext/IterableDext/forEachAsync.html">forEachAsync</a></li>
-    <li><a href="../../dext/IterableDext/forEachIndexed.html">forEachIndexed</a></li>
-    <li><a href="../../dext/IterableDext/forEachIndexedAsync.html">forEachIndexedAsync</a></li>
-    <li><a href="../../dext/IterableDext/groupBy.html">groupBy</a></li>
-    <li><a href="../../dext/IterableDext/mapIndexed.html">mapIndexed</a></li>
-    <li><a href="../../dext/IterableDext/whereIndexed.html">whereIndexed</a></li>
+    <li class="section-title"><a href="../../dext/DoubleDext.html#instance-methods">Methods</a></li>
+    <li><a href="../../dext/DoubleDext/toDateTime.html">toDateTime</a></li>
 
 
 
