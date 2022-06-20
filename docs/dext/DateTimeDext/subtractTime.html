@@ -53,12 +53,12 @@
       
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a></span>
-<span class="name ">subtractTime</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="subtractTime-param-day">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">day</span> = <span class="default-value">0</span>, </span></li>
-<li><span class="parameter" id="subtractTime-param-hour"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">hour</span> = <span class="default-value">0</span>, </span></li>
-<li><span class="parameter" id="subtractTime-param-minute"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">minute</span> = <span class="default-value">0</span>, </span></li>
+<span class="name ">subtractTime</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="subtractTime-param-days">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">days</span> = <span class="default-value">0</span>, </span></li>
+<li><span class="parameter" id="subtractTime-param-hours"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">hours</span> = <span class="default-value">0</span>, </span></li>
+<li><span class="parameter" id="subtractTime-param-minutes"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">minutes</span> = <span class="default-value">0</span>, </span></li>
 <li><span class="parameter" id="subtractTime-param-second"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">second</span> = <span class="default-value">0</span>, </span></li>
-<li><span class="parameter" id="subtractTime-param-millisecond"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">millisecond</span> = <span class="default-value">0</span>, </span></li>
-<li><span class="parameter" id="subtractTime-param-microsecond"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">microsecond</span> = <span class="default-value">0</span>}</span></li>
+<li><span class="parameter" id="subtractTime-param-milliseconds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">milliseconds</span> = <span class="default-value">0</span>, </span></li>
+<li><span class="parameter" id="subtractTime-param-microseconds"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">microseconds</span> = <span class="default-value">0</span>}</span></li>
 </ol>)
 
       
@@ -74,20 +74,20 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">DateTime subtractTime({
-  int day = 0,
-  int hour = 0,
-  int minute = 0,
+  int days = 0,
+  int hours = 0,
+  int minutes = 0,
   int second = 0,
-  int millisecond = 0,
-  int microsecond = 0,
+  int milliseconds = 0,
+  int microseconds = 0,
 }) {
   final duration = Duration(
-    days: day,
-    hours: hour,
-    minutes: minute,
+    days: days,
+    hours: hours,
+    minutes: minutes,
     seconds: second,
-    milliseconds: millisecond,
-    microseconds: microsecond,
+    milliseconds: milliseconds,
+    microseconds: microseconds,
   );
 
   return subtract(duration);
@@ -122,6 +122,10 @@
     <li class="section-title"><a href="../../dext/DateTimeDext.html#instance-methods">Methods</a></li>
     <li><a href="../../dext/DateTimeDext/addTime.html">addTime</a></li>
     <li><a href="../../dext/DateTimeDext/format.html">format</a></li>
+    <li><a href="../../dext/DateTimeDext/isSameDay.html">isSameDay</a></li>
+    <li><a href="../../dext/DateTimeDext/isSameMonth.html">isSameMonth</a></li>
+    <li><a href="../../dext/DateTimeDext/isSameWeek.html">isSameWeek</a></li>
+    <li><a href="../../dext/DateTimeDext/isSameYear.html">isSameYear</a></li>
     <li><a href="../../dext/DateTimeDext/simpleDate.html">simpleDate</a></li>
     <li><a href="../../dext/DateTimeDext/simpleDateTime.html">simpleDateTime</a></li>
     <li><a href="../../dext/DateTimeDext/simpleTime.html">simpleTime</a></li>
