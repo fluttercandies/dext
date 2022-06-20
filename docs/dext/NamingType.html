@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the NumberRoundType enum from the dext library, for the Dart programming language.">
-  <title>NumberRoundType enum - dext library - Dart API</title>
+  <meta name="description" content="API docs for the NamingType enum from the dext library, for the Dart programming language.">
+  <title>NamingType enum - dext library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">dext</a></li>
     <li><a href="../dext/dext-library.html">dext</a></li>
-    <li class="self-crumb">NumberRoundType enum</li>
+    <li class="self-crumb">NamingType enum</li>
   </ol>
-  <div class="self-name">NumberRoundType</div>
+  <div class="self-name">NamingType</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -44,14 +44,14 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-enum">NumberRoundType</span> enum 
+<h1><span class="kind-enum">NamingType</span> enum 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>The round type of number parsing.</p>
+  <p>Names used to convert variables or classes.</p>
 </section>
 
 
@@ -61,7 +61,7 @@
         <dd><ul class="gt-separated dark eNum-relationships">
           <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
           <li><a href="https://api.flutter.dev/flutter/dart-core/Enum-class.html">Enum</a></li>
-          <li>NumberRoundType</li>
+          <li>NamingType</li>
         </ul></dd>
 
       </dl>
@@ -71,96 +71,158 @@
       <h2>Constants</h2>
 
       <dl class="properties">
-        <dt id="ceil" class="constant">
-  <span class="name ">ceil</span>
-  <span class="signature">&#8594; const <a href="../dext/NumberRoundType.html">NumberRoundType</a></span>
+        <dt id="kebab" class="constant">
+  <span class="name ">kebab</span>
+  <span class="signature">&#8594; const <a href="../dext/NamingType.html">NamingType</a></span>
   
 
 </dt>
 <dd>
-  <p>Round the number to the nearest number(bigger).</p>
-<p>Such as of integers:</p>
+  <p>Such as:</p>
 <ul>
-<li><code>1.5</code> -&gt; <code>2</code></li>
-<li><code>1.4</code> -&gt; <code>2</code></li>
-<li><code>1.1</code> -&gt; <code>2</code></li>
-<li><code>-1.5</code> -&gt; <code>-1</code></li>
-</ul>
-<p>Such as of floats 2 digits:</p>
-<ul>
-<li><code>1.334</code> -&gt; <code>1.34</code></li>
-<li><code>1.335</code> -&gt; <code>1.34</code></li>
-<li><code>-1.555</code> -&gt; <code>-1.55</code></li>
+<li>'http client' =&gt; 'http-client'</li>
 </ul> 
   
 
   <div>
-    <span class="signature"><code>const NumberRoundType(2)</code></span>
+    <span class="signature"><code>const NamingType(5)</code></span>
   </div>
 </dd>
 
-        <dt id="floor" class="constant">
-  <span class="name ">floor</span>
-  <span class="signature">&#8594; const <a href="../dext/NumberRoundType.html">NumberRoundType</a></span>
+        <dt id="lower" class="constant">
+  <span class="name ">lower</span>
+  <span class="signature">&#8594; const <a href="../dext/NamingType.html">NamingType</a></span>
   
 
 </dt>
 <dd>
-  <p>Round the number to the nearest integer(lower).
-Such as of integers:</p>
+  <p>Equivalent to <a href="../dext/NamingType.html">NamingType.lowerSnake</a>.</p>
+<p>Such as:</p>
 <ul>
-<li><code>1.5</code> -&gt; <code>1</code></li>
-<li><code>1.4</code> -&gt; <code>1</code></li>
-<li><code>1.9</code> -&gt; <code>1</code></li>
-<li><code>-1.5</code> -&gt; <code>-2</code></li>
-</ul>
-<p>Such as of floats 2 digits:</p>
-<ul>
-<li><code>1.334</code> -&gt; <code>1.33</code></li>
-<li><code>1.335</code> -&gt; <code>1.33</code></li>
-<li><code>-1.555</code> -&gt; <code>-1.56</code></li>
+<li>'http client' =&gt; 'http_client'</li>
 </ul> 
   
 
   <div>
-    <span class="signature"><code>const NumberRoundType(1)</code></span>
+    <span class="signature"><code>const NamingType(6)</code></span>
   </div>
 </dd>
 
-        <dt id="round" class="constant">
-  <span class="name ">round</span>
-  <span class="signature">&#8594; const <a href="../dext/NumberRoundType.html">NumberRoundType</a></span>
+        <dt id="lowerCamel" class="constant">
+  <span class="name ">lowerCamel</span>
+  <span class="signature">&#8594; const <a href="../dext/NamingType.html">NamingType</a></span>
   
 
 </dt>
 <dd>
-  <p>Round the number to the nearest integer.</p>
-<p>Such as of integers:</p>
+  <p>Such as:</p>
 <ul>
-<li><code>1.5</code> -&gt; <code>2</code></li>
-<li><code>1.4</code> -&gt; <code>1</code></li>
-<li><code>1.455</code> -&gt; <code>1</code></li>
-<li><code>-1.5</code> -&gt; <code>-1</code></li>
-<li><code>-1.4</code> -&gt; <code>-2</code></li>
-</ul>
-<p>Such as of floats 2 digits:</p>
-<ul>
-<li><code>1.334</code> -&gt; <code>1.33</code></li>
-<li><code>1.335</code> -&gt; <code>1.34</code></li>
-<li><code>-1.334</code> -&gt; <code>-1.33</code></li>
-<li><code>-1.335</code> -&gt; <code>-1.33</code></li>
-<li><code>-1.336</code> -&gt; <code>-1.34</code></li>
+<li>'http client' =&gt; 'httpClient'</li>
 </ul> 
   
 
   <div>
-    <span class="signature"><code>const NumberRoundType(0)</code></span>
+    <span class="signature"><code>const NamingType(1)</code></span>
+  </div>
+</dd>
+
+        <dt id="lowerSnake" class="constant">
+  <span class="name ">lowerSnake</span>
+  <span class="signature">&#8594; const <a href="../dext/NamingType.html">NamingType</a></span>
+  
+
+</dt>
+<dd>
+  <p>Equivalent to <a href="../dext/NamingType.html">NamingType.lower</a>.</p>
+<p>Such as:</p>
+<ul>
+<li>'http client' =&gt; 'http_client'</li>
+</ul> 
+  
+
+  <div>
+    <span class="signature"><code>const NamingType(2)</code></span>
+  </div>
+</dd>
+
+        <dt id="pascal" class="constant">
+  <span class="name ">pascal</span>
+  <span class="signature">&#8594; const <a href="../dext/NamingType.html">NamingType</a></span>
+  
+
+</dt>
+<dd>
+  <p>Equivalent to <a href="../dext/NamingType.html">NamingType.upperCamel</a>.</p>
+<p>Such as:</p>
+<ul>
+<li>'http client' =&gt; 'HttpClient'</li>
+</ul> 
+  
+
+  <div>
+    <span class="signature"><code>const NamingType(4)</code></span>
+  </div>
+</dd>
+
+        <dt id="upper" class="constant">
+  <span class="name ">upper</span>
+  <span class="signature">&#8594; const <a href="../dext/NamingType.html">NamingType</a></span>
+  
+
+</dt>
+<dd>
+  <p>Such as:</p>
+<ul>
+<li>'http client' =&gt; 'HTTP_CLIENT'</li>
+</ul> 
+  
+
+  <div>
+    <span class="signature"><code>const NamingType(7)</code></span>
+  </div>
+</dd>
+
+        <dt id="upperCamel" class="constant">
+  <span class="name ">upperCamel</span>
+  <span class="signature">&#8594; const <a href="../dext/NamingType.html">NamingType</a></span>
+  
+
+</dt>
+<dd>
+  <p>Equivalent to <a href="../dext/NamingType.html">NamingType.pascal</a>.</p>
+<p>Such as:</p>
+<ul>
+<li>'http client' =&gt; 'HttpClient'</li>
+</ul> 
+  
+
+  <div>
+    <span class="signature"><code>const NamingType(0)</code></span>
+  </div>
+</dd>
+
+        <dt id="upperSnake" class="constant">
+  <span class="name ">upperSnake</span>
+  <span class="signature">&#8594; const <a href="../dext/NamingType.html">NamingType</a></span>
+  
+
+</dt>
+<dd>
+  <p>Equivalent to <a href="../dext/NamingType.html">NamingType.lower</a>.</p>
+<p>Such as:</p>
+<ul>
+<li>'http client' =&gt; 'Http_Client'</li>
+</ul> 
+  
+
+  <div>
+    <span class="signature"><code>const NamingType(3)</code></span>
   </div>
 </dd>
 
         <dt id="values" class="constant">
   <span class="name ">values</span>
-  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../dext/NumberRoundType.html">NumberRoundType</a></span>&gt;</span></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../dext/NamingType.html">NamingType</a></span>&gt;</span></span>
   
 
 </dt>
@@ -169,7 +231,7 @@ Such as of integers:</p>
   
 
   <div>
-    <span class="signature"><code>const List&lt;<wbr><span class="type-parameter">NumberRoundType</span>&gt;</code></span>
+    <span class="signature"><code>const List&lt;<wbr><span class="type-parameter">NamingType</span>&gt;</code></span>
   </div>
 </dd>
 
@@ -233,7 +295,7 @@ Such as of integers:</p>
 </dd>
 
         <dt id="toString" class="callable">
-  <span class="name"><a href="../dext/NumberRoundType/toString.html">toString</a></span><span class="signature">(<wbr>)
+  <span class="name"><a href="../dext/NamingType/toString.html">toString</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   </span>
   
@@ -280,7 +342,7 @@ Such as of integers:</p>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">dext</a></li>
   <li><a href="../dext/dext-library.html">dext</a></li>
-  <li class="self-crumb">NumberRoundType enum</li>
+  <li class="self-crumb">NamingType enum</li>
 </ol>
 
 
@@ -315,24 +377,29 @@ Such as of integers:</p>
     <ol>
 
 
-    <li class="section-title"><a href="../dext/NumberRoundType.html#constants">Constants</a></li>
-    <li>ceil</li>
-    <li>floor</li>
-    <li>round</li>
+    <li class="section-title"><a href="../dext/NamingType.html#constants">Constants</a></li>
+    <li>kebab</li>
+    <li>lower</li>
+    <li>lowerCamel</li>
+    <li>lowerSnake</li>
+    <li>pascal</li>
+    <li>upper</li>
+    <li>upperCamel</li>
+    <li>upperSnake</li>
     <li>values</li>
 
     <li class="section-title">
-      <a href="../dext/NumberRoundType.html#instance-properties">Properties</a>
+      <a href="../dext/NamingType.html#instance-properties">Properties</a>
     </li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></li>
     <li>index</li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
-    <li class="section-title"><a href="../dext/NumberRoundType.html#instance-methods">Methods</a></li>
+    <li class="section-title"><a href="../dext/NamingType.html#instance-methods">Methods</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-    <li><a href="../dext/NumberRoundType/toString.html">toString</a></li>
+    <li><a href="../dext/NamingType/toString.html">toString</a></li>
 
-    <li class="section-title inherited"><a href="../dext/NumberRoundType.html#operators">Operators</a></li>
+    <li class="section-title inherited"><a href="../dext/NamingType.html#operators">Operators</a></li>
     <li class="inherited"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></li>
 
 
