@@ -50,15 +50,15 @@ void main() {
 
     test('subtractTime', () {
       expect(
-        dateTime.subtractTime(day: 1),
+        dateTime.subtractTime(days: 1),
         DateTime(2021, 12, 31, 12, 22, 33, 444, 555),
       );
       expect(
-        dateTime.subtractTime(hour: 1),
+        dateTime.subtractTime(hours: 1),
         DateTime(2022, 1, 1, 11, 22, 33, 444, 555),
       );
       expect(
-        dateTime.subtractTime(minute: 1),
+        dateTime.subtractTime(minutes: 1),
         DateTime(2022, 1, 1, 12, 21, 33, 444, 555),
       );
       expect(
@@ -66,11 +66,11 @@ void main() {
         DateTime(2022, 1, 1, 12, 22, 32, 444, 555),
       );
       expect(
-        dateTime.subtractTime(millisecond: 1),
+        dateTime.subtractTime(milliseconds: 1),
         DateTime(2022, 1, 1, 12, 22, 33, 443, 555),
       );
       expect(
-        dateTime.subtractTime(microsecond: 1),
+        dateTime.subtractTime(microseconds: 1),
         DateTime(2022, 1, 1, 12, 22, 33, 444, 554),
       );
     });
@@ -88,6 +88,42 @@ void main() {
         dateTime.format('yyyy-MM-dd HH:mm:ss.SSS'),
         '2022-01-01 12:22:33.444',
       );
+    });
+
+    test('isSameDay', () {
+      final d1 = DateTime(2022, 1, 1, 12, 22, 33);
+      final d2 = DateTime(2022, 1, 1, 1, 22, 33);
+
+      expect(d1.isSameDay(d2), true);
+    });
+
+    test('isSameWeek', () {
+      final d1 = DateTime(2022, 6, 6);
+      final d2 = DateTime(2022, 6, 8);
+
+      expect(d1.isSameWeek(d2), true);
+
+      final d3 = DateTime(2022, 6, 11);
+      final d4 = DateTime(2022, 6, 13);
+      expect(d3.isSameWeek(d4), false);
+    });
+
+    test('isSameMonth', () {
+      final d1 = DateTime(2022, 1, 1);
+      final d2 = DateTime(2022, 1, 31);
+      final d3 = DateTime(2022, 2, 1);
+
+      expect(d1.isSameMonth(d2), true);
+      expect(d1.isSameMonth(d3), false);
+    });
+
+    test('isSameYear', () {
+      final d1 = DateTime(2022, 1, 1);
+      final d2 = DateTime(2022, 12, 31);
+      final d3 = DateTime(2021, 12, 31);
+
+      expect(d1.isSameYear(d2), true);
+      expect(d1.isSameYear(d3), false);
     });
   });
 }

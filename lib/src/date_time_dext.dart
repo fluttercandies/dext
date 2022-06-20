@@ -58,22 +58,44 @@ extension DateTimeDext on DateTime {
 
   /// Subtract time and return a new [DateTime].
   DateTime subtractTime({
-    int day = 0,
-    int hour = 0,
-    int minute = 0,
+    int days = 0,
+    int hours = 0,
+    int minutes = 0,
     int second = 0,
-    int millisecond = 0,
-    int microsecond = 0,
+    int milliseconds = 0,
+    int microseconds = 0,
   }) {
     final duration = Duration(
-      days: day,
-      hours: hour,
-      minutes: minute,
+      days: days,
+      hours: hours,
+      minutes: minutes,
       seconds: second,
-      milliseconds: millisecond,
-      microseconds: microsecond,
+      milliseconds: milliseconds,
+      microseconds: microseconds,
     );
 
     return subtract(duration);
+  }
+
+  /// Check if the [DateTime] is in the same day as the [other].
+  bool isSameDay(DateTime other) {
+    return year == other.year && month == other.month && day == other.day;
+  }
+
+  /// Check if the [DateTime] is in the same week as the [other].
+  bool isSameWeek(DateTime other) {
+    final thisWeek = toZeroHour().subtractTime(days: weekday - 1);
+    final otherWeek = other.toZeroHour().subtractTime(days: other.weekday - 1);
+    return thisWeek.isSameDay(otherWeek);
+  }
+
+  /// Check if the [DateTime] is in the same month as the [other].
+  bool isSameMonth(DateTime other) {
+    return year == other.year && month == other.month;
+  }
+
+  /// Check if the [DateTime] is in the same year as the [other].
+  bool isSameYear(DateTime other) {
+    return year == other.year;
   }
 }
