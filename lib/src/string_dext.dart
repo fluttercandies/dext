@@ -115,4 +115,53 @@ extension StringDext on String {
   Uri toUri() {
     return Uri.parse(this);
   }
+
+  /// Converts string to other naming convention.
+  ///
+  /// Such as:
+  /// - `'hello world'.toNaming(type: NamingType.lowerCamel) => helloWorld`
+  /// - `'hello world'.toNaming(type: NamingType.upperCamel) => HelloWorld`
+  /// - `'hello world'.toNaming(type: NamingType.pascal) => HelloWorld`
+  /// - `'hello world'.toNaming(type: NamingType.lower) => hello_world`
+  /// - `'hello world'.toNaming(type: NamingType.lowerSnake) => hello_world`
+  /// - `'hello world'.toNaming(type: NamingType.upperSnake) => Hello_World`
+  /// - `'hello world'.toNaming(type: NamingType.kebab) => hello-world`
+  /// - `'hello world'.toNaming(type: NamingType.upper) => HELLO_WORLD`
+  String toNaming({required NamingType type}) {
+    final reg = RegExp(r'\s+');
+    final str = replaceAll(reg, ' ');
+    final list = str.split(' ');
+
+    switch (type) {
+      case NamingType.lowerCamel:
+        return list.mapIndexed<String>((index, value) {
+          if (index == 0) {
+            return value.firstLower();
+          }
+          return value.firstUpper();
+        }).join();
+      case NamingType.upperCamel:
+      case NamingType.pascal:
+        return list.map<String>((value) => value.firstUpper()).join();
+      case NamingType.lower:
+      case NamingType.lowerSnake:
+        return list.map<String>((value) => value.firstLower()).join('_');
+      case NamingType.upperSnake:
+        return list.map<String>((value) => value.firstUpper()).join('_');
+      case NamingType.kebab:
+        return list.map<String>((value) => value.firstLower()).join('-');
+      case NamingType.upper:
+        return list.map<String>((value) => value.toUpperCase()).join('_');
+    }
+  }
+
+  /// Converts the first character of string to upper case.
+  String firstUpper() {
+    return this[0].toUpperCase() + substring(1);
+  }
+
+  /// Converts the first character of string to lower case.
+  String firstLower() {
+    return this[0].toLowerCase() + substring(1);
+  }
 }
