@@ -71,5 +71,54 @@ void main() {
         });
       });
     });
+
+    group('list', () {
+      test('sorted', () {
+        final srcList = <int>[3, 1, 2, 9, 8];
+        final result = srcList.sorted();
+        expect(result, [1, 2, 3, 8, 9]);
+
+        final reverseResult = srcList.sorted(descending: true);
+        expect(reverseResult, [9, 8, 3, 2, 1]);
+
+        final users = [
+          User(name: 'a', age: 12),
+          User(name: 'b', age: 5),
+          User(name: 'c', age: 3),
+          User(name: 'd', age: 7),
+          User(name: 'e', age: 8),
+        ];
+
+        final sortedUsers = users.sorted(comparator: (t) => t.age);
+        expect(sortedUsers, [
+          User(name: 'c', age: 3),
+          User(name: 'b', age: 5),
+          User(name: 'd', age: 7),
+          User(name: 'e', age: 8),
+          User(name: 'a', age: 12),
+        ]);
+      });
+    });
   });
+}
+
+class User {
+  final String name;
+  final int age;
+
+  User({
+    required this.name,
+    required this.age,
+  });
+
+  @override
+  int get hashCode => name.hashCode ^ age.hashCode;
+
+  @override
+  bool operator ==(Object other) {
+    if (other is User) {
+      return name == other.name && age == other.age;
+    }
+    return false;
+  }
 }

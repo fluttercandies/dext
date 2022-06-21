@@ -86,6 +86,42 @@ extension IterableDext2<T> on Iterable<T?> {
   }
 }
 
+extension ListDext<T> on List<T> {
+  /// Returns a sorted list by the given [comparator].
+  List<T> sorted({
+    Comparable Function(T t)? comparator,
+    bool descending = false,
+  }) {
+    List<T> resultList;
+    if (comparator == null) {
+      resultList = toList()
+        ..sort((a, b) {
+          if (a == null) {
+            return -1;
+          }
+          if (b == null) {
+            return 1;
+          }
+
+          if (a is Comparable && b is Comparable) {
+            return a.compareTo(b);
+          }
+
+          return 0;
+        });
+    } else {
+      resultList = toList()
+        ..sort((a, b) => comparator(a).compareTo(comparator(b)));
+    }
+
+    if (descending) {
+      resultList = resultList.reversed.toList();
+    }
+
+    return resultList;
+  }
+}
+
 /// `List<num>` extensions.
 extension NumListExt<T extends num> on Iterable<T> {
   /// Returns the sum of all elements.
