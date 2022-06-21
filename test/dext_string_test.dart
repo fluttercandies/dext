@@ -69,5 +69,18 @@ void main() {
         });
       });
     });
+
+    test('toNaming', () {
+      final src = 'hello world';
+      expect(src.toNaming(), 'helloWorld');
+      expect(src.toNaming(type: NamingType.lowerCamel), 'helloWorld');
+      expect(src.toNaming(type: NamingType.upperCamel), 'HelloWorld');
+      expect(src.toNaming(type: NamingType.lowerSnake), 'hello_world');
+      expect(src.toNaming(type: NamingType.upperSnake), 'Hello_World');
+      expect(src.toNaming(type: NamingType.pascal), 'HelloWorld');
+      expect(src.toNaming(type: NamingType.kebab), 'hello-world');
+      expect(src.toNaming(type: NamingType.lower), 'hello_world');
+      expect(src.toNaming(type: NamingType.upper), 'HELLO_WORLD');
+    });
   });
 }

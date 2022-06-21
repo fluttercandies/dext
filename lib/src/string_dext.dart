@@ -127,7 +127,7 @@ extension StringDext on String {
   /// - `'hello world'.toNaming(type: NamingType.upperSnake) => Hello_World`
   /// - `'hello world'.toNaming(type: NamingType.kebab) => hello-world`
   /// - `'hello world'.toNaming(type: NamingType.upper) => HELLO_WORLD`
-  String toNaming({required NamingType type}) {
+  String toNaming({NamingType type = NamingType.lowerCamel}) {
     final reg = RegExp(r'\s+');
     final str = replaceAll(reg, ' ');
     final list = str.split(' ');
