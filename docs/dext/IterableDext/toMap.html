@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the forEachIndexed method from the IterableDext extension, for the Dart programming language.">
-  <title>forEachIndexed method - IterableDext extension - dext library - Dart API</title>
+  <meta name="description" content="API docs for the toMap method from the IterableDext extension, for the Dart programming language.">
+  <title>toMap method - IterableDext extension - dext library - Dart API</title>
 
 
   
@@ -32,9 +32,9 @@
     <li><a href="../../index.html">dext</a></li>
     <li><a href="../../dext/dext-library.html">dext</a></li>
     <li><a href="../../dext/IterableDext.html">IterableDext<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
-    <li class="self-crumb">forEachIndexed method</li>
+    <li class="self-crumb">toMap&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt; method</li>
   </ol>
-  <div class="self-name">forEachIndexed</div>
+  <div class="self-name">toMap</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,16 +45,15 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-method">forEachIndexed</span> method 
+<h1><span class="kind-method">toMap&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span> method 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
       
 
-<span class="returntype">void</span>
-<span class="name ">forEachIndexed</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="forEachIndexed-param-action"><span class="type-annotation">void</span> <span class="parameter-name">action</span>(<ol class="parameter-list"><li><span class="parameter" id="param-index"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">index</span>, </span></li>
-<li><span class="parameter" id="param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span></span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>
+<span class="name ">toMap</span>&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;(<wbr><ol class="parameter-list"><li><span class="parameter" id="toMap-param-mapping"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/MapEntry-class.html">MapEntry</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span> <span class="parameter-name">mapping</span>(<ol class="parameter-list"><li><span class="parameter" id="param-e"><span class="type-annotation">T</span> <span class="parameter-name">e</span></span></li>
 </ol>
 )</span></li>
 </ol>)
@@ -64,19 +63,18 @@
     </section>
     
 <section class="desc markdown">
-  <p>For each element, do something.</p>
+  <p>Mapping each element to a new Map element.</p>
+<p>Such as:</p>
+<pre class="language-dart"><code class="language-dart">[1, 2, 3].toMap((e) =&gt; MapEntry(e, (e) =&gt; e * 2)); // `{1: 2, 2: 4, 3: 6}`
+</code></pre>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">void forEachIndexed(void Function(int index, T value) action) {
-  var i = 0;
-  for (final item in this) {
-    action(i, item);
-    i++;
-  }
+  <pre class="language-dart"><code class="language-dart">Map&lt;K, V&gt; toMap&lt;K, V&gt;(MapEntry&lt;K, V&gt; Function(T e) mapping) {
+  return map&lt;MapEntry&lt;K, V&gt;&gt;(mapping).toMap();
 }</code></pre>
 </section>
 
@@ -94,7 +92,7 @@
   <li><a href="../../index.html">dext</a></li>
   <li><a href="../../dext/dext-library.html">dext</a></li>
   <li><a href="../../dext/IterableDext.html">IterableDext<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
-  <li class="self-crumb">forEachIndexed method</li>
+  <li class="self-crumb">toMap&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt; method</li>
 </ol>
 
 
