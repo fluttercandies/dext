@@ -99,6 +99,12 @@ void main() {
         ]);
       });
     });
+
+    test('list to map', () {
+      final srcList = <int>[3, 1, 2, 9, 8];
+      final result = srcList.toMap((e) => MapEntry(e, e * 2));
+      expect(result, {3: 6, 1: 2, 2: 4, 9: 18, 8: 16});
+    });
   });
 }
 

@@ -73,6 +73,17 @@ extension IterableDext<T> on Iterable<T> {
       return map;
     });
   }
+
+  /// Mapping each element to a new Map element.
+  ///
+  /// Such as:
+  ///
+  /// ```dart
+  /// [1, 2, 3].toMap((e) => MapEntry(e, (e) => e * 2)); // `{1: 2, 2: 4, 3: 6}`
+  /// ```
+  Map<K, V> toMap<K, V>(MapEntry<K, V> Function(T e) mapping) {
+    return map<MapEntry<K, V>>(mapping).toMap();
+  }
 }
 
 /// Extensions for nullable `Iterable<T?>`.
@@ -175,5 +186,13 @@ extension NumListExt<T extends num> on Iterable<T> {
     }
 
     return total / length;
+  }
+}
+
+/// Extensions for `Iterable<T>`
+extension ListMapEntryDext<K, V> on Iterable<MapEntry<K, V>> {
+  /// Returns a `Map` with the `MapEntry`.
+  Map<K, V> toMap() {
+    return Map.fromEntries(this);
   }
 }
