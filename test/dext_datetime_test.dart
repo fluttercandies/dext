@@ -125,5 +125,86 @@ void main() {
       expect(d1.isSameYear(d2), true);
       expect(d1.isSameYear(d3), false);
     });
+
+    group('copyWith', () {
+      test('year', () {
+        final d1 = DateTime(2022, 1, 1);
+        final d2 = d1.copyWith(year: 2021);
+        expect(d2.year, 2021);
+        expect(d2.month, 1);
+        expect(d2.day, 1);
+      });
+
+      test('month', () {
+        final d1 = DateTime(2022, 1, 1);
+        final d2 = d1.copyWith(month: 2);
+        expect(d2.year, 2022);
+        expect(d2.month, 2);
+        expect(d2.day, 1);
+      });
+
+      test('day', () {
+        final d1 = DateTime(2022, 1, 1);
+        final d2 = d1.copyWith(day: 2);
+        expect(d2.year, 2022);
+        expect(d2.month, 1);
+        expect(d2.day, 2);
+      });
+
+      test('hour', () {
+        final d1 = DateTime(2022, 1, 1);
+        final d2 = d1.copyWith(hour: 2);
+        expect(d2.year, 2022);
+        expect(d2.month, 1);
+        expect(d2.day, 1);
+        expect(d2.hour, 2);
+      });
+
+      test('minute', () {
+        final d1 = DateTime(2022, 1, 1);
+        final d2 = d1.copyWith(minute: 2);
+        expect(d2.year, 2022);
+        expect(d2.month, 1);
+        expect(d2.day, 1);
+        expect(d2.hour, 0);
+        expect(d2.minute, 2);
+      });
+
+      test('second', () {
+        final d1 = DateTime(2022, 1, 1);
+        final d2 = d1.copyWith(second: 2);
+        expect(d2.year, 2022);
+        expect(d2.month, 1);
+        expect(d2.day, 1);
+        expect(d2.hour, 0);
+        expect(d2.minute, 0);
+        expect(d2.second, 2);
+      });
+
+      test('millisecond', () {
+        final d1 = DateTime(2022, 1, 1);
+        final d2 = d1.copyWith(millisecond: 2);
+        expect(d2.year, 2022);
+        expect(d2.month, 1);
+        expect(d2.day, 1);
+        expect(d2.hour, 0);
+        expect(d2.minute, 0);
+        expect(d2.second, 0);
+        expect(d2.millisecond, 2);
+      });
+
+      test('microsecond', () {
+        final d1 = DateTime(2022, 1, 1);
+        final d2 = d1.copyWith(microsecond: 2);
+        expect(d2.year, 2022);
+        expect(d2.month, 1);
+        expect(d2.day, 1);
+        expect(d2.hour, 0);
+        expect(d2.minute, 0);
+        expect(d2.second, 0);
+        expect(d2.millisecond, 0);
+        expect(d2.microsecond, 2);
+      });
+    });
   });
 }
