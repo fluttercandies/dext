@@ -6,6 +6,11 @@
 
 ## 0.1.1
 
+- Feature
+  - `num`
+  - `DateTime`
+  - `Iterable`
+
 ## 0.1.0
 
 - Initial version.
