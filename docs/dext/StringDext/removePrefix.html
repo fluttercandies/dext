@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the firstLower method from the StringDext extension, for the Dart programming language.">
-  <title>firstLower method - StringDext extension - dext library - Dart API</title>
+  <meta name="description" content="API docs for the removePrefix method from the StringDext extension, for the Dart programming language.">
+  <title>removePrefix method - StringDext extension - dext library - Dart API</title>
 
 
   
@@ -32,9 +32,9 @@
     <li><a href="../../index.html">dext</a></li>
     <li><a href="../../dext/dext-library.html">dext</a></li>
     <li><a href="../../dext/StringDext.html">StringDext</a></li>
-    <li class="self-crumb">firstLower method</li>
+    <li class="self-crumb">removePrefix method</li>
   </ol>
-  <div class="self-name">firstLower</div>
+  <div class="self-name">removePrefix</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,7 +45,7 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-method">firstLower</span> method 
+<h1><span class="kind-method">removePrefix</span> method 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
@@ -53,22 +53,30 @@
       
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
-<span class="name ">firstLower</span>(<wbr>)
+<span class="name ">removePrefix</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="removePrefix-param-prefix"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">prefix</span></span></li>
+</ol>)
 
       
 
     </section>
     
 <section class="desc markdown">
-  <p>Converts the first character of string to lower case.</p>
+  <p>If the string is begins with <code>prefix</code>, returns the string without <code>prefix</code>,</p>
+<p>Example:</p>
+<ul>
+<li><code>'123456'.removePrefix('123') =&gt; 456</code></li>
+</ul>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">String firstLower() {
-  return this[0].toLowerCase() + substring(1);
+  <pre class="language-dart"><code class="language-dart">String removePrefix(String prefix) {
+  if (startsWith(prefix)) {
+    return substring(prefix.length);
+  }
+  return this;
 }</code></pre>
 </section>
 
@@ -86,7 +94,7 @@
   <li><a href="../../index.html">dext</a></li>
   <li><a href="../../dext/dext-library.html">dext</a></li>
   <li><a href="../../dext/StringDext.html">StringDext</a></li>
-  <li class="self-crumb">firstLower method</li>
+  <li class="self-crumb">removePrefix method</li>
 </ol>
 
 
