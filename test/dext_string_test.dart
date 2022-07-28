@@ -82,5 +82,29 @@ void main() {
       expect(src.toNaming(type: NamingType.lower), 'hello_world');
       expect(src.toNaming(type: NamingType.upper), 'HELLO_WORLD');
     });
+
+    test('trimText', () {
+      expect(' 123456 '.trimText(), '123456');
+      expect(' 123456 '.trimText(left: true, right: false), '123456 ');
+      expect(' 123456 '.trimText(left: false, right: true), ' 123456');
+
+      expect('123454321'.trimText(s: '123'), '454321');
+      expect('123454321'.trimText(s: '123', left: false), '123454321');
+      expect('123454321'.trimText(s: '123', right: false), '454321');
+
+      expect('12345123'.trimText(s: '123'), '45');
+      expect('12345123'.trimText(s: '123', left: true, right: false), '45123');
+      expect('12345123'.trimText(s: '123', left: false, right: true), '12345');
+    });
+
+    test('remove prefix', () {
+      final src = '123456';
+      expect(src.removePrefix('123'), '456');
+    });
+
+    test('remove suffix', () {
+      final src = '123456';
+      expect(src.removeSuffix('456'), '123');
+    });
   });
 }

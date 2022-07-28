@@ -164,4 +164,49 @@ extension StringDext on String {
   String firstLower() {
     return this[0].toLowerCase() + substring(1);
   }
+
+  /// If the string is begins with [prefix], returns the string without [prefix],
+  ///
+  /// Example:
+  /// - `'123456'.removePrefix('123') => 456`
+  String removePrefix(String prefix) {
+    if (startsWith(prefix)) {
+      return substring(prefix.length);
+    }
+    return this;
+  }
+
+  /// If the string is ends with [suffix], returns the string without [suffix],
+  ///
+  /// Example:
+  /// - `'123456'.removeSuffix('456') => 123`
+  String removeSuffix(String suffix) {
+    if (endsWith(suffix)) {
+      return substring(0, length - suffix.length);
+    }
+    return this;
+  }
+
+  /// Remove the prefix when the [left] is true, and remove suffix when the [right] is true.
+  ///
+  /// If the [str] is null, [trimLeft] when [left] is true, and [trimRight] when [right] is true.
+  String trimText({String? s, bool left = true, bool right = true}) {
+    var result = this;
+    if (s != null) {
+      if (left) {
+        result = result.removePrefix(s);
+      }
+      if (right) {
+        result = result.removeSuffix(s);
+      }
+    } else {
+      if (left) {
+        result = result.trimLeft();
+      }
+      if (right) {
+        result = result.trimRight();
+      }
+    }
+    return result;
+  }
 }
