@@ -9,3 +9,4 @@ export 'src/string_dext.dart';
 export 'src/number_dext.dart';
 export 'src/iterable_dext.dart';
 export 'src/date_time_dext.dart';
+export 'src/int_list_dext.dart';

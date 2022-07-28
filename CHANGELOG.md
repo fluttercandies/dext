@@ -12,6 +12,13 @@
     - `removePrefix`
     - `removeSuffix`
     - `trimText`
+    - `encode`
+    - `toUrlEncoded`
+  - `List<int>`
+    - `toUint8List`
+    - `decode`
+    - `toBase64`
+    - `toUrlEncoded`
 
 ## 0.1.1
 

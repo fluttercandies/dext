@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dext/dext.dart';
 import 'package:test/test.dart';
 
@@ -105,6 +107,18 @@ void main() {
     test('remove suffix', () {
       final src = '123456';
       expect(src.removeSuffix('456'), '123');
+    });
+
+    test('encode', () {
+      expect('123'.encode(ascii), [49, 50, 51]);
+      expect('123'.encode(utf8), [49, 50, 51]);
+
+      expect('你'.encode(utf8), [228, 189, 160]);
+    });
+
+    test('To url encoded string', () {
+      expect('123'.toUrlEncoded(), '123');
+      expect('你'.toUrlEncoded(), '%E4%BD%A0');
     });
   });
 }

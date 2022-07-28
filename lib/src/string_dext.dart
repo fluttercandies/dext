@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:math';
 
 import 'package:dext/dext.dart';
@@ -208,5 +209,21 @@ extension StringDext on String {
       }
     }
     return result;
+  }
+
+  /// Wrap the [Codec.encode].
+  ///
+  /// Example:
+  ///   - '123'.toCodeList() => [49, 50, 51]
+  ///   - '你好'.toCodeList() => [228, 189, 160, 229, 165, 189]
+  List<int> encode([Encoding encoding = utf8]) {
+    return encoding.encode(this);
+  }
+
+  /// Convert to a uri encoded string.
+  ///
+  /// Wrap the [Uri.encodeComponent].
+  String toUrlEncoded() {
+    return Uri.encodeComponent(this);
   }
 }
