@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the ListMapEntryDext extension from the dext library, for the Dart programming language.">
-  <title>ListMapEntryDext extension - dext library - Dart API</title>
+  <meta name="description" content="API docs for the IntListDext extension from the dext library, for the Dart programming language.">
+  <title>IntListDext extension - dext library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">dext</a></li>
     <li><a href="../dext/dext-library.html">dext</a></li>
-    <li class="self-crumb">ListMapEntryDext extension</li>
+    <li class="self-crumb">IntListDext extension</li>
   </ol>
-  <div class="self-name">ListMapEntryDext</div>
+  <div class="self-name">IntListDext</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -44,14 +44,14 @@
 
 <div id="dartdoc-main-content" class="main-content">
     <div>
-<h1><span class="kind-class">ListMapEntryDext&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span> extension 
+<h1><span class="kind-class">IntListDext</span> extension 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>Extensions for <code>Iterable&lt;T&gt;</code></p>
+  <p>Mapping each element to a new one.</p>
 </section>
 
     <section>
@@ -59,7 +59,7 @@
         <dt>on</dt>
         <dd>
             <ul class="comma-separated clazz-relationships">
-            <li><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/MapEntry-class.html">MapEntry</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>&gt;</span></li>
+            <li><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></li>
             </ul>
         </dd>
         </dl>
@@ -69,15 +69,54 @@
     <section class="summary offset-anchor" id="instance-methods">
         <h2>Methods</h2>
         <dl class="callables">
-            <dt id="toMap" class="callable">
-  <span class="name"><a href="../dext/ListMapEntryDext/toMap.html">toMap</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter">K</span>, <span class="type-parameter">V</span>&gt;</span></span>
+            <dt id="decode" class="callable">
+  <span class="name"><a href="../dext/IntListDext/decode.html">decode</a></span><span class="signature">(<wbr><span class="parameter" id="decode-param-encoding">[<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-convert/Encoding-class.html">Encoding</a></span> <span class="parameter-name">encoding</span> = <span class="default-value">utf8</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   </span>
   
 
 </dt>
 <dd>
-  Returns a <code>Map</code> with the <code>MapEntry</code>. 
+  Decode the data to a string. 
+  
+
+</dd>
+
+            <dt id="toBase64" class="callable">
+  <span class="name"><a href="../dext/IntListDext/toBase64.html">toBase64</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Encode the data to a base64 string. 
+  
+
+</dd>
+
+            <dt id="toUint8List" class="callable">
+  <span class="name"><a href="../dext/IntListDext/toUint8List.html">toUint8List</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-typed_data/Uint8List-class.html">Uint8List</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Mapping each element to a new one. 
+  
+
+</dd>
+
+            <dt id="toUrlEncoded" class="callable">
+  <span class="name"><a href="../dext/IntListDext/toUrlEncoded.html">toUrlEncoded</a></span><span class="signature">(<wbr><span class="parameter" id="toUrlEncoded-param-encoding">[<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-convert/Encoding-class.html">Encoding</a></span> <span class="parameter-name">encoding</span> = <span class="default-value">utf8</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Encode to data to a url encoded string. 
   
 
 </dd>
@@ -101,7 +140,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">dext</a></li>
   <li><a href="../dext/dext-library.html">dext</a></li>
-  <li class="self-crumb">ListMapEntryDext extension</li>
+  <li class="self-crumb">IntListDext extension</li>
 </ol>
 
 
@@ -142,8 +181,11 @@
 
 
 
-    <li class="section-title"><a href="../dext/ListMapEntryDext.html#instance-methods">Methods</a></li>
-    <li><a href="../dext/ListMapEntryDext/toMap.html">toMap</a></li>
+    <li class="section-title"><a href="../dext/IntListDext.html#instance-methods">Methods</a></li>
+    <li><a href="../dext/IntListDext/decode.html">decode</a></li>
+    <li><a href="../dext/IntListDext/toBase64.html">toBase64</a></li>
+    <li><a href="../dext/IntListDext/toUint8List.html">toUint8List</a></li>
+    <li><a href="../dext/IntListDext/toUrlEncoded.html">toUrlEncoded</a></li>
 
 
 

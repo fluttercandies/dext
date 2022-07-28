@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the roundToInt method from the StringDext extension, for the Dart programming language.">
-  <title>roundToInt method - StringDext extension - dext library - Dart API</title>
+  <meta name="description" content="API docs for the encode method from the StringDext extension, for the Dart programming language.">
+  <title>encode method - StringDext extension - dext library - Dart API</title>
 
 
   
@@ -32,9 +32,9 @@
     <li><a href="../../index.html">dext</a></li>
     <li><a href="../../dext/dext-library.html">dext</a></li>
     <li><a href="../../dext/StringDext.html">StringDext</a></li>
-    <li class="self-crumb">roundToInt method</li>
+    <li class="self-crumb">encode method</li>
   </ol>
-  <div class="self-name">roundToInt</div>
+  <div class="self-name">encode</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,15 +45,15 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-method">roundToInt</span> method 
+<h1><span class="kind-method">encode</span> method 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>
-<span class="name ">roundToInt</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="roundToInt-param-roundType">{<span class="type-annotation"><a href="../../dext/NumberRoundType.html">NumberRoundType</a></span> <span class="parameter-name">roundType</span> = <span class="default-value">NumberRoundType.round</span>}</span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>&gt;</span></span>
+<span class="name ">encode</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="encode-param-encoding">[<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-convert/Encoding-class.html">Encoding</a></span> <span class="parameter-name">encoding</span> = <span class="default-value">utf8</span>]</span></li>
 </ol>)
 
       
@@ -61,32 +61,11 @@
     </section>
     
 <section class="desc markdown">
-  <p>Converts string to a int.</p>
-<p>Support double and int.</p>
-<p>The <code>roundType</code> is used to round the double.</p>
-<p>Such as:</p>
+  <p>Wrap the <a href="https://api.flutter.dev/flutter/dart-convert/Codec/encode.html">Codec.encode</a>.</p>
+<p>Example:</p>
 <ul>
-<li>
-<p>'123.45'.roundToInt() =&gt; 123</p>
-</li>
-<li>
-<p>'123.5'.roundToInt(roundType: NumberRoundType.floor) =&gt; 123</p>
-</li>
-<li>
-<p>'123.5'.roundToInt(roundType: NumberRoundType.ceil) =&gt; 124</p>
-</li>
-<li>
-<p>'123.5'.roundToInt(roundType: NumberRoundType.round) =&gt; 124</p>
-</li>
-<li>
-<p>'123.45'.roundToInt(roundType: NumberRoundType.round) =&gt; 123</p>
-</li>
-<li>
-<p>'123.45'.roundToInt(roundType: NumberRoundType.floor) =&gt; 123</p>
-</li>
-<li>
-<p>'123.45'.roundToInt(roundType: NumberRoundType.ceil) =&gt; 124</p>
-</li>
+<li>'123'.toCodeList() =&gt; <code>49, 50, 51</code></li>
+<li>'你好'.toCodeList() =&gt; <code>228, 189, 160, 229, 165, 189</code></li>
 </ul>
 </section>
 
@@ -94,20 +73,8 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">int roundToInt({
-  NumberRoundType roundType = NumberRoundType.round,
-}) {
-  final n = double.parse(this);
-  switch (roundType) {
-    case NumberRoundType.round:
-      return n.round();
-    case NumberRoundType.floor:
-      return n.floor();
-    case NumberRoundType.ceil:
-      return n.ceil();
-    default:
-      throw Exception(&#39;Unknown round type: $roundType&#39;);
-  }
+  <pre class="language-dart"><code class="language-dart">List&lt;int&gt; encode([Encoding encoding = utf8]) {
+  return encoding.encode(this);
 }</code></pre>
 </section>
 
@@ -125,7 +92,7 @@
   <li><a href="../../index.html">dext</a></li>
   <li><a href="../../dext/dext-library.html">dext</a></li>
   <li><a href="../../dext/StringDext.html">StringDext</a></li>
-  <li class="self-crumb">roundToInt method</li>
+  <li class="self-crumb">encode method</li>
 </ol>
 
 
