@@ -1,4 +1,5 @@
 import 'package:dext/dext.dart';
+import 'dart:math' as math;
 
 /// Extension for [int].
 extension IntDext on int {
@@ -53,6 +54,11 @@ extension DoubleDext on double {
 
     return DateTime.fromMicrosecondsSinceEpoch(time);
   }
+
+  /// Returns pow of [this].
+  double pow(int exponent) {
+    return math.pow(this, exponent).toDouble();
+  }
 }
 
 /// Extensions for [num].
@@ -75,5 +81,21 @@ extension NumberDext on num {
       default:
         throw Exception('Unknown round type: $roundType');
     }
+  }
+
+  /// Returns pow of [this].
+  ///
+  /// see [math.pow].
+  num pow(num exponent) {
+    return math.pow(this, exponent);
+  }
+
+  /// Returns sqrt of [this].
+  ///
+  /// The [exponent] is the number of times to square the number.
+  ///
+  /// It is the same as `pow(-exponent)`.
+  double sqrt([int exponent = 2]) {
+    return math.pow(this, 1 / exponent).toDouble();
   }
 }

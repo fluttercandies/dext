@@ -48,5 +48,22 @@ void main() {
         DateTime(2022, 6, 20, 14, 7, 33, 166, 555),
       );
     });
+
+    group('pow and sqrt', () {
+      test('pow', () {
+        expect(10.pow(3), 1000);
+        expect(10.pow(2), 100);
+        expect(10.pow(1), 10);
+        expect(10.pow(0), 1);
+
+        expect(1.5.pow(2), 1.5 * 1.5);
+        expect(1.5.pow(3), 1.5 * 1.5 * 1.5);
+      });
+
+      test('sqrt', () {
+        expect(100.sqrt(2), 10);
+        expect(1000.sqrt(3).roundToInt(), 10);
+      });
+    });
   });
 }
