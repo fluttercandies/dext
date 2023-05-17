@@ -106,6 +106,15 @@ void main() {
       expect(result, {3: 6, 1: 2, 2: 4, 9: 18, 8: 16});
     });
   });
+
+  group('IterableDext2 ', () {
+    test('whereNotNull', () {
+      final src = [1, 2, null, 3, 5, 6.0];
+      final result = src.whereNotNull();
+
+      expect(result, [1, 2, 3, 5, 6.0]);
+    });
+  });
 }
 
 class User {

@@ -88,6 +88,8 @@ extension IterableDext<T> on Iterable<T> {
 
 /// Extensions for nullable `Iterable<T?>`.
 extension IterableDext2<T> on Iterable<T?> {
+
+  /// Filtering for not null elements.
   Iterable<T> whereNotNull() sync* {
     for (final item in this) {
       if (item != null) {
