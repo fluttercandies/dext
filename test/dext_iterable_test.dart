@@ -105,6 +105,21 @@ void main() {
       final result = srcList.toMap((e) => MapEntry(e, e * 2));
       expect(result, {3: 6, 1: 2, 2: 4, 9: 18, 8: 16});
     });
+
+    test('any and all', () {
+      final testList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      expect(testList.any((e) => e > 5), true);
+      expect(testList.any((e) => e > 10), false);
+
+      expect(testList.all((e) => e > 0), true);
+      expect(testList.all((e) => e > 5), false);
+
+      expect(testList.anyIndexed((index, element) => element > 5), true);
+      expect(testList.anyIndexed((index, element) => element > 10), false);
+
+      expect(testList.allIndexed((index, element) => element > 0), true);
+      expect(testList.allIndexed((index, element) => element > 5), false);
+    });
   });
 
   group('IterableDext2 ', () {

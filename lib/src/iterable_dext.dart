@@ -20,6 +20,52 @@ extension IterableDext<T> on Iterable<T> {
     }
   }
 
+  /// Returns `true` if at least one element matches the given [predicate].
+  bool any(bool Function(T element) predicate) {
+    for (final element in this) {
+      if (predicate(element)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /// Returns `true` if at least one element matches the given [predicate].
+  /// [any] with index.
+  bool anyIndexed(bool Function(int index, T element) predicate) {
+    var i = 0;
+    for (final element in this) {
+      if (predicate(i, element)) {
+        return true;
+      }
+      i++;
+    }
+    return false;
+  }
+
+  /// Returns `true` if all elements match the given [predicate].
+  bool all(bool Function(T element) predicate) {
+    for (final element in this) {
+      if (!predicate(element)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /// Returns `true` if all elements match the given [predicate].
+  /// [all] with index.
+  bool allIndexed(bool Function(int index, T element) predicate) {
+    var i = 0;
+    for (final element in this) {
+      if (!predicate(i, element)) {
+        return false;
+      }
+      i++;
+    }
+    return true;
+  }
+
   /// For each element, do something.
   ///
   /// The method is a async version of [forEach].
@@ -88,7 +134,6 @@ extension IterableDext<T> on Iterable<T> {
 
 /// Extensions for nullable `Iterable<T?>`.
 extension IterableDext2<T> on Iterable<T?> {
-
   /// Filtering for not null elements.
   Iterable<T> whereNotNull() sync* {
     for (final item in this) {
